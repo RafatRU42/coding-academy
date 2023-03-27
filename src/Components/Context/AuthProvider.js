@@ -1,11 +1,11 @@
 import React from 'react';
 
-const Navbar = () => {
+const AuthProvider = () => {
     return (
         <div>
-            this is navbar
+            
         </div>
     );
 };
 
-export default Navbar;
+export default AuthProvider;
