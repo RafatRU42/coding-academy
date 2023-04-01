@@ -7,6 +7,17 @@ import PrimaryButton from '../../Components/PrimaryButton/PrimaryButton'
 const Navbar = () => {
     const { user } = useContext(AuthContext)
   const [isDropdownOpen, setIsDropdownOpen] = useState(false)
+
+  const [nightMode, setNightMode] = useState(true)
+
+  const handleNightMode = () =>{
+    const root = document.getElementById('root')
+    // root.classList.toggle('night')
+    setNightMode(!nightMode)
+
+    {nightMode ? root.classList.add('night') : root.classList.remove('night')}
+  }
+
     return (
       <header className='text-gray-900 body-font shadow-sm'>
       <div className=' mx-auto flex flex-wrap py-5 px-20 justify-around md:justify-between items-center'>
@@ -14,7 +25,7 @@ const Navbar = () => {
           to='/'
           className='flex title-font font-medium items-center text-transparent bg-clip-text bg-gradient-to-r from-emerald-500 to-lime-500 mb-4 md:mb-0'
         >
-          <span className='ml-3 text-2xl font-bold '>Aircnc</span>
+          <span className='ml-3 text-2xl font-bold '>Code Academy</span>
         </Link>
         <nav className='md:ml-auto flex flex-wrap items-center text-base justify-center'>
           {user?.email ? (
@@ -81,8 +92,21 @@ const Navbar = () => {
             </>
           ) : (
             <>
+              <button onClick={handleNightMode} className='mr-5 hover:text-green-600'>
+                Night Mode
+              </button>
               <Link to='/login' className='mr-5 hover:text-green-600'>
                 Login
+              </Link>
+              <Link to='/signup' className='mr-5'>
+                <PrimaryButton classes='rounded-full px-2 py-1'>
+                  Signup
+                </PrimaryButton>
+              </Link>
+              <Link to='/signup' className='mr-5'>
+                <PrimaryButton classes='rounded-full px-2 py-1'>
+                  Signup
+                </PrimaryButton>
               </Link>
               <Link to='/signup' className='mr-5'>
                 <PrimaryButton classes='rounded-full px-2 py-1'>
