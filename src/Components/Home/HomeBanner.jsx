@@ -46,7 +46,7 @@ const HomeBanner = () => {
                 </div>
             </div>
             <motion.div
-                animate={animation}
+                // animate={animation}
                 ref={ref}
             >
                 <div  className='flex '>
